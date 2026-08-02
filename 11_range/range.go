@@ -20,7 +20,6 @@ func main() {
 	m := map[string]string{"a": "apple", "b": "banana"}
 	for k, v := range m {
 		fmt.Println(k, v)
-
 	}
 	for i, c := range "golang" { //unicode code point rune
 		fmt.Println(i, c)
