@@ -5,11 +5,18 @@ import (
 	"time"
 )
 
+type customer struct {
+	name    string
+	age     int
+	student bool
+}
+
 type order struct {
 	id        string
 	amount    float32
 	status    string
 	createdAt time.Time //nanosecond precision
+	customer            //embedding customer struct in order struct
 }
 
 // construtors hote nhi hai pr bna skete hai usning functions
@@ -49,4 +56,16 @@ func main() {
 		student bool
 	}{name: "Go", age: 10, student: true}
 	fmt.Println(language)
+
+	//Struct embeding======
+	order3 := order{
+		id:     "3",
+		amount: 200.00,
+		customer: customer{
+			name:    "John Doe",
+			age:     30,
+			student: false,
+		},
+	}
+	fmt.Println(order3)
 }
