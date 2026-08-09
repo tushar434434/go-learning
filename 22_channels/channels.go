@@ -24,9 +24,7 @@ func worker(done chan bool) {
 }
 func main() {
 	done := make(chan bool)
-
 	go worker(done)
-
 	<-done // wait for signal (sync point)
 	fmt.Println("Done!")
 }
