@@ -18,6 +18,7 @@ import "fmt"
 // }
 
 //synchronization using channels======
+//sync
 func worker(done chan bool) {
 	fmt.Println("Working...")
 	done <- true // signal completion
@@ -28,3 +29,6 @@ func main() {
 	<-done // wait for signal (sync point)
 	fmt.Println("Done!")
 }
+
+//sync
+//synchro
